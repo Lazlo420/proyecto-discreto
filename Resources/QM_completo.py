@@ -95,16 +95,16 @@ def removeTerms(_chart, terms):  # Removes minterms which are already covered fr
             except KeyError:
                 pass
 
-
+###Estos son los 4 valores, selecciona el valor descomentandolo y comentando el otro. Actualiza el cambio en la linea 107
 # Brasil = valores.Brasil()
-#Corea = valores.Corea()
+Corea = valores.Corea()
 #Japon = valores.Japon()
-USA = valores.USA()
+#USA = valores.USA()
 dntcrs = []
 # mt = [int(i) for i in input("Ingrese los Minterminos: ").strip().split()]
 # dc = [int(i) for i in input(
 #     "Ingrese los 'don't cares' (si los hay): ").strip().split()]
-mt = [int(i) for i in USA]
+mt = [int(i) for i in Corea]
 dc = [int(i) for i in dntcrs]
 mt.sort()
 minterms = mt + dc
@@ -158,7 +158,7 @@ while True:
     # print("Primos Implicantes de esta tabla:", "No hay" if len(local_unmarked)
     #       == 0 else ', '.join(local_unmarked))  # Printing Prime Implicants of current table
     if should_stop:  # If the minterms cannot be combined further
-        print("\nTodos los primos implicantes: ", "No hay" if len(all_pi) ==
+        print("\nTodos los implicantes primos: ", "No hay" if len(all_pi) ==
               0 else ', '.join(all_pi))  # Print all prime implicants
         break
     # Printing of all the next groups starts
@@ -195,8 +195,8 @@ for i in all_pi:
 
 EPI = findEPI(chart)  # Finding essential prime implicants
 EPI.sort()
-print(EPI)
-print("\nPrimos Implicantes Esenciales: "+', '.join(str(i) for i in EPI))
+print('Implicantes Primos Esenciales\n',EPI)
+#print("\nPrimos Implicantes Esenciales: "+', '.join(str(i) for i in EPI))
 removeTerms(chart, EPI)  # Remove EPI related columns from chart
 if(len(chart) == 0):  # If no minterms remain after removing EPI related columns
     final_result = [findVariables(i)

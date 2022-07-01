@@ -1,5 +1,4 @@
-import pickle
-import os
+import pickle, os
 import pandas as pd
 import numpy as np
 from Implicantes_esenciales import *
@@ -87,7 +86,6 @@ while True:
             L[int(x)-1].operacion_usuario(df)
             A=L[int(x)-1].input
             B=L[int(x)-1].input_results
-            print(L[int(x)-1],'\n',L[int(x)-1].filaspositivas)
             print('Input: \n',A,'\n\nResultados: \n',B)
             print('\n','#'*50,'\n')
             break
